@@ -1,11 +1,12 @@
 {
   "name": "chuni_intl_fetcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.min.js",
   "scripts": {
     "dev": "vite build --watch --mode development",
-    "build": "vite build"
+    "build": "vite build",
+    "publish": "pnpm build && pnpm publish dist"
   },
   "repository": {
     "type": "git",
