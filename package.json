@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite build --watch --mode development",
     "build": "vite build",
-    "publish": "pnpm build && pnpm publish dist"
+    "pub": "pnpm build && pnpm publish dist"
   },
   "repository": {
     "type": "git",
