@@ -23,6 +23,17 @@ async function onDifficultyFetch(difficulty: string) {
   dom.appendChild(paragraph);
 }
 
+function submitRecord(record: string) {
+  const form = document.getElementById("fetcher-form") as HTMLFormElement;
+  const input = document.getElementById(
+    "fetcher-record-input"
+  ) as HTMLInputElement;
+  if (!form || !input) return;
+  form.action = `${chuniViewerUrl}/submit`;
+  input.value = record;
+  form.submit();
+}
+
 async function main() {
   initDom();
   const records = await fetchRecordFast(onDifficultyFetch);
@@ -30,8 +41,8 @@ async function main() {
   const encodedGzippedRecord = await gzippedToBase64(
     new Uint8Array(gzippedRecords)
   );
+  submitRecord(encodedGzippedRecord);
   cleanupDom(dom);
-  window.open(`${chuniViewerUrl}/submit?records=` + encodedGzippedRecord);
 }
 
 main();
