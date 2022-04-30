@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
   build: {
@@ -10,5 +11,14 @@ export default defineConfig({
       name: "chuni_intl_fetcher",
     },
   },
-  plugins: [],
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: "package.json",
+          dest: ".",
+        },
+      ],
+    }),
+  ],
 });
