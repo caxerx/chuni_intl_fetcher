@@ -63,6 +63,11 @@ export async function fetchRecordFast(
             s.querySelector(".text_b") as HTMLSpanElement
           )?.innerText?.replaceAll(",", ""),
           difficulty: difficulties[diffIndex],
+          fullCombo: s.querySelector("img[src*='alljustice']")
+            ? "AJ"
+            : s.querySelector("img[src*='fullcombo']")
+            ? "FC"
+            : "",
         };
         return data;
       })
