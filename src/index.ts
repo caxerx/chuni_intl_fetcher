@@ -1,7 +1,5 @@
 import { fetchRecordFast } from "./utils/chunithm-net-fetch";
 import modalTemplate from "./template/modal.html?raw";
-import gzip from "gzip-js";
-import { gzippedToBase64 } from "./utils/base64";
 
 const chuniViewerUrl = import.meta.env.VITE_CHUNI_VIEWER_URL;
 let dom: HTMLElement;
@@ -37,11 +35,9 @@ function submitRecord(record: string) {
 async function main() {
   initDom();
   const records = await fetchRecordFast(onDifficultyFetch);
-  const gzippedRecords = gzip.zip(JSON.stringify(records), { level: 6 });
-  const encodedGzippedRecord = await gzippedToBase64(
-    new Uint8Array(gzippedRecords)
-  );
-  submitRecord(encodedGzippedRecord);
+  console.log(records)
+
+  submitRecord(JSON.stringify(records));
   cleanupDom(dom);
 }
 

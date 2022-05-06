@@ -1,17 +1,11 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
-  '@types/gzip-js': ^0.3.3
-  gzip-js: ^0.3.2
   tsc: ^2.0.4
   tslib: ^2.4.0
   typescript: ^4.6.4
   vite: ^2.9.6
   vite-plugin-static-copy: ^0.5.0
-
-dependencies:
-  '@types/gzip-js': 0.3.3
-  gzip-js: 0.3.2
 
 devDependencies:
   tsc: 2.0.4
@@ -42,16 +36,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
-
-  /@types/gzip-js/0.3.3:
-    resolution: {integrity: sha512-Bp4dv9hfpD49sjn59+8VPMDm4O5Lx1qSLKn4GqV9ENbvoKrCV7GntIr7e85cFjtRWRPTXkIxWTCk4DKMXostMg==}
-    dependencies:
-      '@types/node': 17.0.30
-    dev: false
-
-  /@types/node/17.0.30:
-    resolution: {integrity: sha512-oNBIZjIqyHYP8VCNAV9uEytXVeXG2oR0w9lgAXro20eugRQfY002qr3CUl6BAe+Yf/z3CRjPdz27Pu6WWtuSRw==}
-    dev: false
 
   /anymatch/3.1.2:
     resolution: {integrity: sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==}
@@ -87,18 +71,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
-
-  /crc32/0.2.2:
-    resolution: {integrity: sha1-etIg1v/c0Rn5/BJ6d3LKzqOQpLo=}
-    engines: {node: '>= 0.4.0'}
-    hasBin: true
-    dev: false
-
-  /deflate-js/0.2.3:
-    resolution: {integrity: sha1-+Fq7WOvFFRowYUdHPVfD5PfkQms=}
-    engines: {node: '>= 0.4.0'}
-    hasBin: true
-    dev: false
 
   /esbuild-android-64/0.14.38:
     resolution: {integrity: sha512-aRFxR3scRKkbmNuGAK+Gee3+yFxkTJO/cx83Dkyzo4CnQl/2zVSurtG6+G86EQIZ+w+VYngVyK7P3HyTBKu3nw==}
@@ -363,15 +335,6 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     dev: true
-
-  /gzip-js/0.3.2:
-    resolution: {integrity: sha1-IxF+/usozzhSSN7/Df+tiUg22Ws=}
-    engines: {node: '>= 0.4.0'}
-    hasBin: true
-    dependencies:
-      crc32: 0.2.2
-      deflate-js: 0.2.3
-    dev: false
 
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
