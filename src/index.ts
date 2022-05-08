@@ -27,7 +27,9 @@ function submitRecord(record: string) {
     "fetcher-record-input"
   ) as HTMLInputElement;
   if (!form || !input) return;
+  form.enctype = "application/x-www-form-urlencoded";
   form.action = `${chuniViewerUrl}/submit`;
+  input.name = "record";
   input.value = record;
   form.submit();
 }
@@ -35,7 +37,6 @@ function submitRecord(record: string) {
 async function main() {
   initDom();
   const records = await fetchRecordFast(onDifficultyFetch);
-  console.log(records)
 
   submitRecord(JSON.stringify(records));
   cleanupDom(dom);

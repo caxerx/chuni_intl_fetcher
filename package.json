@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.min.js",
   "scripts": {
-    "dev": "vite --https",
+    "dev": "vite --https --port 3004",
     "build": "vite build",
     "pub": "pnpm build && pnpm publish dist"
   },
