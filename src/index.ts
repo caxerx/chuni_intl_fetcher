@@ -8,10 +8,11 @@ function initDom() {
   const modal = document.createElement("modal");
   modal.innerHTML = modalTemplate;
   document.getElementsByTagName("body")[0].appendChild(modal);
+  modal.classList.add("fetching");
   dom = modal;
 }
 
-function cleanupDom(dom: HTMLElement) {
+function cleanupDom() {
   dom.remove();
 }
 
@@ -26,20 +27,31 @@ function submitRecord(record: string) {
   const input = document.getElementById(
     "fetcher-record-input"
   ) as HTMLInputElement;
+
   if (!form || !input) return;
+
   form.enctype = "application/x-www-form-urlencoded";
   form.action = `${chuniViewerUrl}/submit`;
   input.name = "record";
   input.value = record;
-  form.submit();
+
+  dom.classList.remove("fetching");
+  dom.classList.add("fetched");
+  const submitBtn = document.getElementById(
+    "fetch-record-submit"
+  ) as HTMLInputElement;
+  submitBtn.onclick = () => {
+    setTimeout(() => {
+      cleanupDom();
+    }, 1000);
+  };
+  dom.appendChild(form);
 }
 
 async function main() {
   initDom();
   const records = await fetchRecordFast(onDifficultyFetch);
-
   submitRecord(JSON.stringify(records));
-  cleanupDom(dom);
 }
 
 main();

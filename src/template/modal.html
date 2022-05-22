@@ -12,7 +12,25 @@
   body {
     overflow: hidden;
   }
+
+  .fetching form {
+    display: none;
+  }
+
+  .fetched form {
+    display: block;
+  }
+
+  .fetched #fetch-record-submit {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+  }
 </style>
+
 <form target="_blank" method="post" id="fetcher-form">
   <input type="hidden" name="record" id="fetcher-record-input" />
+  <input type="submit" id="fetch-record-submit" value="Click here to show result" />
 </form>
